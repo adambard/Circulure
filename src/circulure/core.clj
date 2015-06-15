@@ -78,7 +78,7 @@
 ;; POST /posts
 (defn create-post [{user :user {:keys [picture time status]} :params :as req}]
   (db/put-post! {:user (:_id user)
-                 :time (if (= time "now") 0 (Integer/parseInt time))
+                 :time (if (= time "now") 0 time)
                  :status status
                  :type (if picture "post_with_media" "post")
                  :picture picture}))
