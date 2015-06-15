@@ -1,0 +1,4 @@
+.env
+resources/uploads
+.nrepl-history
+target
